@@ -29,6 +29,7 @@
         controller: 'ArticlesController',
         controllerAs: 'vm',
         resolve: {
+          commentsResolve: getComments,
           articleResolve: getArticle
         },
         data: {
@@ -41,6 +42,14 @@
 
   function getArticle($stateParams, ArticlesService) {
     return ArticlesService.get({
+      articleId: $stateParams.articleId
+    }).$promise;
+  }
+
+  getComments.$inject = ['$stateParams', 'CommentsService'];
+
+  function getComments($stateParams, CommentsService) {
+    return CommentsService.get({
       articleId: $stateParams.articleId
     }).$promise;
   }
