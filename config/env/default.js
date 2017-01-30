@@ -8,6 +8,7 @@ module.exports = {
     googleAnalyticsTrackingID: process.env.GOOGLE_ANALYTICS_TRACKING_ID || 'GOOGLE_ANALYTICS_TRACKING_ID'
   },
   db: {
+    uri: 'mongodb://windsurf:windsurf@ds011382.mlab.com:11382/heroku_g0qgkz31',
     promise: global.Promise
   },
   port: process.env.PORT || 3000,

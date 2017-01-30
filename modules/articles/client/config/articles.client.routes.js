@@ -53,4 +53,5 @@
       articleId: $stateParams.articleId
     }).$promise;
   }
+
 }());

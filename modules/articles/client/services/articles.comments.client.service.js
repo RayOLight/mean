@@ -8,7 +8,7 @@
   CommentsService.$inject = ['$resource', '$log'];
 
   function CommentsService($resource, $log) {
-    return $resource('/api/articles/:articleId/comments', {
+    var Comments = $resource('/api/articles/:articleId/comments', {
       articleId: '@_id'
     }, {
       update: {
@@ -18,5 +18,14 @@
         isArray: true
       }
     });
+
+    angular.extend(Comments.prototype, {
+      deleteComment: function (comment) {
+        return $resource('/api/articles/' + comment.articleId + '/comment/' + comment._id);
+      }
+    });
+
+    return Comments;
+
   }
 }());

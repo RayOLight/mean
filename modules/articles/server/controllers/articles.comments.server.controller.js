@@ -30,7 +30,7 @@ exports.create = function (req, res) {
  * Delete a comment
  */
 exports.delete = function (req, res) {
-  var comment = req.comment;
+  var comment = new Comment({ _id: req.params.id });
 
   comment.remove(function (err) {
     if (err) {
