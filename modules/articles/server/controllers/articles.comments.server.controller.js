@@ -13,6 +13,7 @@ var path = require('path'),
  */
 exports.create = function (req, res) {
   var comment = new Comment(req.body);
+  console.log(req.body);
   comment.articleId = req.params.articleId;
 
   comment.save(function (err) {

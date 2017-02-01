@@ -21,9 +21,6 @@ exports.invokeRolesPolicies = function () {
       resources: '/api/articles/:articleId',
       permissions: '*'
     }, {
-      resources: '/api/articles/:articleId/comments',
-      permissions: '*'
-    }, {
       resources: '/api/articles/:articleId/comment/:id',
       permissions: '*'
     }]
@@ -36,7 +33,7 @@ exports.invokeRolesPolicies = function () {
       resources: '/api/articles/:articleId',
       permissions: ['get']
     }, {
-      resources: '/api/articles/:articleId/comments',
+      resources: '/api/articles/:articleId/comment/:id',
       permissions: ['get', 'put']
     }]
   }, {
@@ -48,7 +45,7 @@ exports.invokeRolesPolicies = function () {
       resources: '/api/articles/:articleId',
       permissions: ['get']
     }, {
-      resources: '/api/articles/:articleId/comments',
+      resources: '/api/articles/:articleId/comment/:id',
       permissions: ['get']
     }]
   }]);

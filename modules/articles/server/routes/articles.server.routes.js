@@ -20,11 +20,9 @@ module.exports = function (app) {
     .delete(articles.delete);
 
   // Comments for single article routes
-  app.route('/api/articles/:articleId/comments').all(articlesPolicy.isAllowed)
-    .get(comments.list)
-    .put(comments.create);
-
   app.route('/api/articles/:articleId/comment/:id').all(articlesPolicy.isAllowed)
+    .get(comments.list)
+    .put(comments.create)
     .delete(comments.delete);
 
   // Finish by binding the article middleware

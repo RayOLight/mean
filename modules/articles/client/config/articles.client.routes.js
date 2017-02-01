@@ -46,12 +46,10 @@
     }).$promise;
   }
 
-  getComments.$inject = ['$stateParams', 'CommentsService'];
+  getComments.$inject = ['CommentsService'];
 
-  function getComments($stateParams, CommentsService) {
-    return CommentsService.get({
-      articleId: $stateParams.articleId
-    }).$promise;
+  function getComments(Comments) {
+    return new Comments();
   }
 
 }());
